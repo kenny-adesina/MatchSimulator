@@ -36,21 +36,42 @@ public class MatchSimulator {
         int randShot;
         int totalPossessionA = 0;
         int totalPossessionB = 0;
+        float stoppage = 0;
 
-
+         // NOTE: In the future I might change this to be split into TWO halves.
         // Regular Time
         for(int i = 1; i <= 90 ; i++){
-
             possession = (int)(Math.round(Math.random()));
             chance = (int)(Math.random()*(10-1+1))+1;
             randShot = (int)(Math.random()*30)+1;
-
+            stoppage+=(float)(Math.random()*0.10);
             if (possession == 0){
                 totalPossessionA++;
                  if (chance == 10){
                    shotToGoal(possession);
                    shotsA++;
                  }
+            } else {
+                totalPossessionB++;
+                if (chance == 10){
+                    shotToGoal(possession);
+                    shotsB++;
+                }
+            }
+        }
+
+        // Stoppage Time
+        for(int i = 0; i < Math.round(stoppage); i++){
+            possession = (int)(Math.round(Math.random()));
+            chance = (int)(Math.random()*(10-1+1))+1;
+            randShot = (int)(Math.random()*30)+1;
+            stoppage+=(float)(Math.random()*0.10);
+            if (possession == 0){
+                totalPossessionA++;
+                if (chance == 10){
+                    shotToGoal(possession);
+                    shotsA++;
+                }
             } else {
                 totalPossessionB++;
                 if (chance == 10){

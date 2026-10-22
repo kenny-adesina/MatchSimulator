@@ -189,7 +189,7 @@ public class Leagues {
     }
 
     public void importLeague(){
-        // Empty rn
+        // Empty for now, this will probably be used with Main.java when that's done.
 }
 
     public void addTeam(String name,int a,int m,int d){
