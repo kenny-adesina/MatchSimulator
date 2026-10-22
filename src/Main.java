@@ -1,7 +1,8 @@
 public class Main {
 
 
-    // Coming soon!!
+    // Coming Soon
+    // Will include full season simulator
 
 
 
