@@ -192,6 +192,29 @@ public class Leagues {
         // Empty for now, this will probably be used with Main.java when that's done.
 }
 
+  public Team getTeam(String league, String team){
+        if(league.equals("EPL")){
+            for(Team t : EPL){
+                if((t.getName()).equals(team)){
+                    return t;
+                }
+            }
+        } else if(league.equals("LaLiga")){
+            for(Team t : LaLiga){
+                if((t.getName()).equals(team)){
+                    return t;
+                }
+            }
+        } else if (league.equals("SerieA")){
+            for(Team t : SerieA){
+                if((t.getName()).equals(team)){
+                    return t;
+                }
+            }
+      }
+    return null;
+  }
+
     public void addTeam(String name,int a,int m,int d){
         Custom.add(new Team(name,null,a,m,d));
     }
